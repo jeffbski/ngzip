@@ -1,0 +1,36 @@
+{
+  "name": "gzip-cli",
+  "description": "portable streaming gzip command line client uses node.js zlib",
+  "version": "1.0.0",
+  "main": "bin/cli",
+  "author": "Jeff Barczewski <info@codewinds.com>",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jeffbski/gzip-cli.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jeffbski/gzip-cli/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha 'test/**/*.mocha.js'"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "devDependencies": {
+    "accum": "^0.3.6",
+    "expect": "^1.8.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "minimist": "^1.1.1"
+  },
+  "keywords": [
+    "gzip",
+    "cli",
+    "streaming",
+    "portable",
+    "windows"
+  ]
+}
