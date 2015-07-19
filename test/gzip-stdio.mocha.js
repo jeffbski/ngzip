@@ -57,7 +57,7 @@ function execWithInput(input, cb) {
 
 }
 
-describe('gzip-cli using stdio', function () {
+describe('ngzip compression using stdio', function () {
   it('should compress text stdin to stdout', function (done) {
     var input = "Hello my world. The quick brown fox jumped";
     execWithInput(input, done);

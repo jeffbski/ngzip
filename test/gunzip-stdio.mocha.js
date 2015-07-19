@@ -52,7 +52,7 @@ function execWithInput(args, input, cb) {
   pass.end(input);
 }
 
-describe('gzip-cli decompression using stdio', function () {
+describe('ngzip decompression using stdio', function () {
   it('should decompress text stdin to stdout with -d', function (done) {
     var input = "Hello my world. The quick brown fox jumped";
     execWithInput(['-d'], input, done);

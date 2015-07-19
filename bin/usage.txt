@@ -1,4 +1,4 @@
-Usage: gzip-cli {OPTIONS} [file]
+Usage: ngzip {OPTIONS} [file]
 
 Description:
 

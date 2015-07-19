@@ -1,17 +1,19 @@
-# gzip-cli - portable streaming gzip command line utility
+# ngzip - portable streaming gzip command line utility
 
 Implement a portable streaming gzip-like command line utility using Node.js built-in zlib.
 
 Should run anywhere Node.js runs including Windows
+
+[![Build Status](https://secure.travis-ci.org/jeffbski/ngzip.png?branch=master)](http://travis-ci.org/jeffbski/ngzip)
 
 ## Installation
 
 Requires node.js/iojs >= 0.10
 
 ```bash
-npm install gzip-cli # local version
+npm install ngzip # local version
 OR
-npm install -g gzip-cli # global version
+npm install -g ngzip # global version
 ```
 
 ## Usage
@@ -19,14 +21,14 @@ npm install -g gzip-cli # global version
 Options are similar to bash command gzip.
 
 ```bash
-cat foo | gzip-cli > foo.gz # compress stdin to stdout
-gzip-cli foo --stdout # compress foo to stdout
-gzip-cli foo # compress foo to foo.gz
-gzip-cli foo -S .bar # compress foo to foo.bar
-cat foo.gz | gzip-cli -d > foo # decompress stdin to stdout
-gzip-cli -d foo.gz --stdout # decompress foo.gz to stdout
-gzip-cli -d foo.gz # decompress foo.gz to foo
-gzip-cli -d foo.bar -S .bar # decompress foo.bar to foo
+cat foo | ngzip > foo.gz # compress stdin to stdout
+ngzip foo --stdout # compress foo to stdout
+ngzip foo # compress foo to foo.gz
+ngzip foo -S .bar # compress foo to foo.bar
+cat foo.gz | ngzip -d > foo # decompress stdin to stdout
+ngzip -d foo.gz --stdout # decompress foo.gz to stdout
+ngzip -d foo.gz # decompress foo.gz to foo
+ngzip -d foo.bar -S .bar # decompress foo.bar to foo
 ```
 
 Differences from bash `gzip`:
@@ -37,7 +39,7 @@ Differences from bash `gzip`:
 
 
 ```
-Usage: gzip-cli {OPTIONS} [file]
+Usage: ngzip {OPTIONS} [file]
 
 Description:
 
@@ -76,6 +78,7 @@ Standard Options:
 
  - gzip-like command line utility that runs everywhere Node.js runs including Windows
  - streaming
+ - stdin/stdout
 
 ## Why
 
@@ -86,9 +89,9 @@ I need a portable gzip command line utility that I can use from all Node.js envi
 If you have input or ideas or would like to get involved, you may:
 
  - contact me via twitter @jeffbski  - <http://twitter.com/jeffbski>
- - open an issue on github to begin a discussion - <https://github.com/jeffbski/gzip-cli/issues>
- - fork the repo and send a pull request (ideally with tests) - <https://github.com/jeffbski/gzip-cli>
+ - open an issue on github to begin a discussion - <https://github.com/jeffbski/ngzip/issues>
+ - fork the repo and send a pull request (ideally with tests) - <https://github.com/jeffbski/ngzip>
 
 ## License
 
- - [MIT license](http://github.com/jeffbski/gzip-cli/raw/master/LICENSE)
+ - [MIT license](http://github.com/jeffbski/ngzip/raw/master/LICENSE)

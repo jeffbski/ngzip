@@ -1,15 +1,15 @@
 {
-  "name": "gzip-cli",
+  "name": "ngzip",
   "description": "portable streaming gzip command line client uses node.js zlib",
   "version": "1.0.0",
   "main": "bin/cli",
   "author": "Jeff Barczewski <info@codewinds.com>",
   "repository": {
     "type": "git",
-    "url": "http://github.com/jeffbski/gzip-cli.git"
+    "url": "http://github.com/jeffbski/ngzip.git"
   },
   "bugs": {
-    "url": "http://github.com/jeffbski/gzip-cli/issues"
+    "url": "http://github.com/jeffbski/ngzip/issues"
   },
   "license": "MIT",
   "scripts": {
