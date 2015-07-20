@@ -39,13 +39,22 @@ Description:
 
      The gzip program compresses and decompresses a file using Lempel-Ziv
      coding (LZ77). gzip will compress or decompress from standard input
-     to standard output.
+     to standard output. The default compression level is slightly biased
+     toward higher compression at expense of speed.
 
 Standard Options:
 
  -d, --decompress, --uncompress
 
   This option selects decompression rather than compression.
+
+ -1, --fast
+
+  Use the fastest compression method (less compression). Only relevant when in compression mode.
+
+ -9, --best
+
+  Use the maximum compression method at the expense of speed. Only relevant when in compression mode.
 
  -h, --help
 

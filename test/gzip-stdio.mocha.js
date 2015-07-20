@@ -20,8 +20,8 @@ function execGzip(args, options) {
   return childProcess.spawn(process.execPath, fullArgs, options);
 }
 
-function execWithInput(input, cb) {
-    var child = execGzip([], {});
+function execWithInput(args, input, cb) {
+    var child = execGzip(args, {});
     var output;
 
     child.on('close', function (code) {
@@ -60,12 +60,25 @@ function execWithInput(input, cb) {
 describe('ngzip compression using stdio', function () {
   it('should compress text stdin to stdout', function (done) {
     var input = "Hello my world. The quick brown fox jumped";
-    execWithInput(input, done);
+    execWithInput([], input, done);
   });
 
   it('should compress binary stdin to stdout', function (done) {
     var input  = crypto.randomBytes(2048);
-    execWithInput(input, done);
+    execWithInput([], input, done);
   });
+
+  ['-1', '--fast', '-9', '--best'].map(function (x) {
+    it('should compress text stdin to stdout with option: ' + x, function (done) {
+      var input = "Hello my world. The quick brown fox jumped";
+      execWithInput([x], input, done);
+    });
+
+    it('should compress binary stdin to stdout with option: ' + x, function (done) {
+      var input  = crypto.randomBytes(2048);
+      execWithInput([x], input, done);
+    });
+  });
+
 
 });
