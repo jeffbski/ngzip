@@ -16,7 +16,7 @@ npm install -g ngzip # global version
 
 ## Usage
 
-Options are similar to bash command gzip.
+Options are similar to bash command gzip. If using local version ensure that you either use node_modules/.bin/ngzip or add to your path.
 
 ```bash
 cat foo | ngzip > foo.gz # compress stdin to stdout
