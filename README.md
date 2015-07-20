@@ -1,8 +1,6 @@
 # ngzip - portable streaming stdio gzip command line utility
 
-Implement a portable streaming gzip-like command line utility using Node.js built-in zlib which reads from stdin and writes to stdout
-
-Should run anywhere Node.js runs including Windows
+ngzip is a portable streaming stdio gzip command line utility that uses Node.js zlib. It should run anywhere Node.js runs including windows, *nix, mac
 
 [![Build Status](https://secure.travis-ci.org/jeffbski/ngzip.png?branch=master)](http://travis-ci.org/jeffbski/ngzip)
 

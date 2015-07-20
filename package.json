@@ -1,6 +1,6 @@
 {
   "name": "ngzip",
-  "description": "portable streaming stdio gzip command line client uses node.js zlib",
+  "description": "ngzip is a portable streaming stdio gzip command line utility that uses Node.js zlib. It should run anywhere Node.js runs including windows, *nix, mac",
   "version": "1.0.0",
   "main": "bin/cli",
   "author": "Jeff Barczewski <info@codewinds.com>",
