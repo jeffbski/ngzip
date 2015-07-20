@@ -1,6 +1,6 @@
-# ngzip - portable streaming gzip command line utility
+# ngzip - portable streaming stdio gzip command line utility
 
-Implement a portable streaming gzip-like command line utility using Node.js built-in zlib.
+Implement a portable streaming gzip-like command line utility using Node.js built-in zlib which reads from stdin and writes to stdout
 
 Should run anywhere Node.js runs including Windows
 
@@ -22,20 +22,14 @@ Options are similar to bash command gzip.
 
 ```bash
 cat foo | ngzip > foo.gz # compress stdin to stdout
-ngzip foo --stdout # compress foo to stdout
-ngzip foo # compress foo to foo.gz
-ngzip foo -S .bar # compress foo to foo.bar
 cat foo.gz | ngzip -d > foo # decompress stdin to stdout
-ngzip -d foo.gz --stdout # decompress foo.gz to stdout
-ngzip -d foo.gz # decompress foo.gz to foo
-ngzip -d foo.bar -S .bar # decompress foo.bar to foo
 ```
 
-Differences from bash `gzip`:
+Any program which sends data to stdout can be used for input to ngzip. On Windows you can use `type` instead of `cat`.
 
- - only a few options are implemented from gzip
- - program does not delete original file when compressing or decompressing
- - if destination file exists, file will be overwritten
+Unlike bash's gzip, ngzip was written for simplicity. gzip supports a wide variety of options including reading/writing to files, removing old files, varying compression factors.
+
+ngzip has started with the simplest solution using stdio.
 
 
 ```
@@ -44,29 +38,14 @@ Usage: ngzip {OPTIONS} [file]
 Description:
 
      The gzip program compresses and decompresses a file using Lempel-Ziv
-     coding (LZ77).  If no file is specified, gzip will compress from
-     standard input, or decompress to standard output.  When in
-     compression mode, file will be written to another file with
-     the suffix, set by the -S suffix option, added, if possible.
-
-     In decompression mode, file will be checked for existence, as
-     will the file with the suffix added.  The file argument must contain
-     a separate complete archive.
+     coding (LZ77). gzip will compress or decompress from standard input
+     to standard output.
 
 Standard Options:
-
- -c, --stdout, --to-stdout
-
-  This option specifies that output will go to the standard output stream,
-  leaving files intact.
 
  -d, --decompress, --uncompress
 
   This option selects decompression rather than compression.
-
- -S suffix, --suffix suffix
-
-  This option changes the default suffix from .gz to suffix.
 
  -h, --help
 
@@ -79,10 +58,11 @@ Standard Options:
  - gzip-like command line utility that runs everywhere Node.js runs including Windows
  - streaming
  - stdin/stdout
+ - simplicity
 
 ## Why
 
-I need a portable gzip command line utility that I can use from all Node.js environments
+I need a portable gzip command line utility that I can use from all Node.js environments for streaming compression and decompression
 
 ## Get involved
 

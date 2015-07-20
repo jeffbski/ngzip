@@ -6,13 +6,10 @@ var path = require('path');
 var zlib = require('zlib');
 
 var minimistOpts = {
-  boolean: ['c', 'd', 'h'],
-  string: ['S'],
+  boolean: ['d', 'h'],
   alias: {
-    c: ['stdout', 'to-stdout'],
     d: ['decompress', 'uncompress'],
-    h: 'help',
-    S: 'suffix'
+    h: 'help'
   }
 };
 
@@ -20,8 +17,6 @@ var argv = minimist(process.argv.slice(2), minimistOpts);
 
 var decompress = argv.decompress;
 var help = argv.help;
-var stdout = argv.stdout;
-var suffix = argv.suffix || '.gz';
 
 if (help) { // help
   return fs.createReadStream(__dirname + '/usage.txt')
@@ -55,29 +50,8 @@ function errorExit(err) {
     process.exit(1);
 }
 
-function calcOutputFile(inputFile, suffix, decompress) {
-  var outFile = (decompress) ?
-      path.dirname(inputFile) + '/' + path.basename(inputFile, suffix) :
-      inputFile + suffix;
-  if (outFile === inputFile) {
-    return errorExit(new Error('inputFile matches outputFile'));
-  }
-  return outFile;
-}
-
-var inputFile = (argv._ && argv._.length) ? argv._[0] : null;
-var outputFile = (inputFile && !stdout) ?
-    calcOutputFile(inputFile, suffix, decompress) :
-    null;
-
-var inStream = (inputFile) ?
-    fs.createReadStream(inputFile) :
-    process.stdin;
-
-var outStream = (outputFile) ?
-    fs.createWriteStream(outputFile) :
-    process.stdout;
-
+var inStream = process.stdin;
+var outStream = process.stdout;
 
 if (decompress) { // decompression
   return gunzip(inStream, outStream);

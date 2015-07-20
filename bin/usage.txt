@@ -1,31 +1,16 @@
-Usage: ngzip {OPTIONS} [file]
+Usage: otherprog | ngzip {OPTIONS} > file.gz
 
 Description:
 
      The gzip program compresses and decompresses a file using Lempel-Ziv
-     coding (LZ77).  If no file is specified, gzip will compress from
-     standard input, or decompress to standard output.  When in
-     compression mode, file will be written to another file with
-     the suffix, set by the -S suffix option, added, if possible.
-
-     In decompression mode, file will be checked for existence, as
-     will the file with the suffix added.  The file argument must contain
-     a separate complete archive.
+     coding (LZ77).  gzip will compress or decompress from standard input
+     to standard output.
 
 Standard Options:
-
- -c, --stdout, --to-stdout
-
-  This option specifies that output will go to the standard output stream,
-  leaving files intact.
 
  -d, --decompress, --uncompress
 
   This option selects decompression rather than compression.
-
- -S suffix, --suffix suffix
-
-  This option changes the default suffix from .gz to suffix.
 
  -h, --help
 
