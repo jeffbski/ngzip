@@ -1,6 +1,6 @@
 {
   "name": "ngzip",
-  "description": "portable streaming gzip command line client uses node.js zlib",
+  "description": "portable streaming stdio gzip command line client uses node.js zlib",
   "version": "1.0.0",
   "main": "bin/cli",
   "author": "Jeff Barczewski <info@codewinds.com>",
