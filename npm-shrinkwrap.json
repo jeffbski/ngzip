@@ -1,0 +1,11 @@
+{
+  "name": "ngzip",
+  "version": "1.0.0",
+  "dependencies": {
+    "minimist": {
+      "version": "1.1.1",
+      "from": "minimist@*",
+      "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.1.1.tgz"
+    }
+  }
+}
