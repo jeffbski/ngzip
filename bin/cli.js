@@ -5,7 +5,9 @@ var minimist = require('minimist');
 var zlib = require('zlib');
 
 var minimistOpts = {
-  boolean: ['d', 'h', '1', '9'],
+  boolean: ['d', 'h', '1', '9',
+            'decompress', 'uncompress'], // these should not be needed
+    // once https://github.com/substack/minimist/pull/61 is merged
   alias: {
     d: ['decompress', 'uncompress'],
     h: 'help',
@@ -21,7 +23,7 @@ var help = argv.help;
 var compressionLevel = (argv.fast) ? zlib.Z_BEST_SPEED :
     (argv.best) ? zlib.Z_BEST_COMPRESSION :
     zlib.Z_DEFAULT_COMPRESSION;
-var inputFilename = argv._[0]
+var inputFilename = argv._[0];
 
 if (help) { // help
   return fs.createReadStream(__dirname + '/usage.txt')
