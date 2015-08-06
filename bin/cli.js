@@ -2,7 +2,6 @@
 
 var fs = require('fs');
 var minimist = require('minimist');
-var path = require('path');
 var zlib = require('zlib');
 
 var minimistOpts = {
@@ -22,6 +21,7 @@ var help = argv.help;
 var compressionLevel = (argv.fast) ? zlib.Z_BEST_SPEED :
     (argv.best) ? zlib.Z_BEST_COMPRESSION :
     zlib.Z_DEFAULT_COMPRESSION;
+var inputFilename = argv._[0]
 
 if (help) { // help
   return fs.createReadStream(__dirname + '/usage.txt')
@@ -55,7 +55,7 @@ function errorExit(err) {
     process.exit(1);
 }
 
-var inStream = process.stdin;
+var inStream = inputFilename ? fs.createReadStream(inputFilename) : process.stdin;
 var outStream = process.stdout;
 
 if (decompress) { // decompression
