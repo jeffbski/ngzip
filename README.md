@@ -31,7 +31,7 @@ ngzip has started with the simplest solution using stdio.
 
 
 ```
-Usage: ngzip {OPTIONS} [file]
+Usage: ngzip {OPTIONS}
 
 Description:
 
