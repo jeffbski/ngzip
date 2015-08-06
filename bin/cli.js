@@ -5,9 +5,7 @@ var minimist = require('minimist');
 var zlib = require('zlib');
 
 var minimistOpts = {
-  boolean: ['d', 'h', '1', '9',
-            'decompress', 'uncompress'], // these should not be needed
-    // once https://github.com/substack/minimist/pull/61 is merged
+  boolean: ['d', 'h', '1', '9'],
   alias: {
     d: ['decompress', 'uncompress'],
     h: 'help',
