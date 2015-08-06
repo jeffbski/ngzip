@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "mocha 'test/**/*.mocha.js'"
+    "test": "mocha \"test/**/*.mocha.js\""
   },
   "engines": {
     "node": ">=0.10"
