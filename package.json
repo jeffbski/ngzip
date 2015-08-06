@@ -35,7 +35,12 @@
     "cli",
     "streaming",
     "portable",
+    "unix",
+    "linux",
+    "osx",
     "windows",
+    "win",
+    "win32",
     "stdio"
   ]
 }
