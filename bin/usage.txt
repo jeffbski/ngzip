@@ -1,11 +1,12 @@
-Usage: otherprog | ngzip {OPTIONS} > file.gz
+Usage: ngzip {OPTIONS} [file] > file.gz
 
 Description:
 
-     The gzip program compresses and decompresses a file using Lempel-Ziv
-     coding (LZ77).  gzip will compress or decompress from standard input
-     to standard output. The default compression level is slightly biased
-     toward higher compression at expense of speed.
+     The ngzip program compresses and decompresses a file using Lempel-Ziv
+     coding (LZ77). ngzip will compress or decompress from standard input
+     to standard output. If a file parameter is provided ngzip will read
+     from the file and write to stdout. The default compression level is
+     slightly biased toward higher compression at expense of speed.
 
 Standard Options:
 

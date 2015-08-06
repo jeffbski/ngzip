@@ -19,26 +19,32 @@ npm install -g ngzip # global version
 Options are similar to bash command gzip. If using local version ensure that you either use node_modules/.bin/ngzip or add to your path.
 
 ```bash
-cat foo | ngzip > foo.gz # compress stdin to stdout
-cat foo.gz | ngzip -d > foo # decompress stdin to stdout
+ngzip foo > foo.gz # compress foo to foo.gz
+ngzip -d foo.gz > foo # decompress foo.gz to foo
+catw foo | ngzip > foo.gz # compress stdin to stdout
+catw foo.gz | ngzip -d > foo # decompress stdin to stdout
 ```
 
-Any program which sends data to stdout can be used for input to ngzip. On Windows you can use `type` instead of `cat`.
+Any program which sends data to stdout can be used for input to ngzip. On Windows you can use `type` instead of `cat`. You can also use the [catw](https://github.com/substack/catw) as a portable option of `cat`.
 
 Unlike bash's gzip, ngzip was written for simplicity. gzip supports a wide variety of options including reading/writing to files, removing old files, varying compression factors.
 
-ngzip has started with the simplest solution using stdio.
+ngzip implements just a few use cases:
+
+ - read from stdin and write to stdout
+ - read from file and write to stdout
 
 
 ```
-Usage: ngzip {OPTIONS} [file]
+Usage: ngzip {OPTIONS} [file] > target.gz
 
 Description:
 
-     The gzip program compresses and decompresses a file using Lempel-Ziv
-     coding (LZ77). gzip will compress or decompress from standard input
-     to standard output. The default compression level is slightly biased
-     toward higher compression at expense of speed.
+     The ngzip program compresses and decompresses a file using Lempel-Ziv
+     coding (LZ77). ngzip will compress or decompress from standard input
+     to standard output. If a file parameter is provided ngzip will read
+     from the file and write to stdout. The default compression level is
+     slightly biased toward higher compression at expense of speed.
 
 Standard Options:
 
@@ -65,6 +71,7 @@ Standard Options:
  - gzip-like command line utility that runs everywhere Node.js runs including Windows
  - streaming
  - stdin/stdout
+ - file read for portability (avoids use of cat/type)
  - simplicity
 
 ## Why
